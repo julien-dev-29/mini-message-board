@@ -1,0 +1,22 @@
+<%- include('../partials/head') %>
+
+    <body>
+        <h1>Mini Message Board</h1>
+        <a href="/new">Ajouter un message</a>
+        <% messages.forEach(message=> { %>
+            <div class="card">
+                <h2>
+                    <%= message.text %>
+                </h2>
+                <p>
+                    <%= message.user %>
+                </p>
+                <p>
+                    <%= message.added %>
+                </p>
+                <a href="/message/<%= message.id %>">Open</a>
+            </div>
+            <% }) %>
+    </body>
+
+    </html>
