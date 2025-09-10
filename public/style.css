@@ -17,7 +17,14 @@ body {
     place-content: center;
 }
 
+@media (max-width: 768px) {
+    .body-form {
+        grid-template-columns: 1fr;
+    }
+}
+
 .form-container {
+    margin: 24px;
     border-radius: 5px;
     background-color: #F9F9F9;
     padding: 24px;
@@ -38,6 +45,7 @@ body {
 
 .form input {
     border: 1px solid #D9D9D9;
+    color: #646464;
     border-radius: 3px;
     padding: 8px;
     width: 100%;
@@ -64,6 +72,10 @@ body {
     transform: scale(0.99)
 }
 
+.form button:focus {
+    outline: 1px solid #56BA9F;
+}
+
 a {
     font-weight: bold;
     color: #29A383;
@@ -74,9 +86,11 @@ a {
     color: #646464;
 }
 
-.board .user {
+.board .user,
+.board .user div {
     display: flex;
-    gap: 16px;
-    justify-content: left;
+    gap: 8px;
+    font-weight: bold;
+    justify-content: space-between;
     align-items: center;
 }

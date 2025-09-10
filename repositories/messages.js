@@ -34,7 +34,7 @@ const getMessageById = (id) => {
 }
 
 const addMessage = (req) => {
-    messages.push({ id: crypto.randomUUID(), text: req.body.messageText, user: "jurol", added: new Date() })
+    messages.push({ id: crypto.randomUUID(), text: req.body.messageText, user: req.body.username, added: new Date() })
 }
 
 export { getAllMessages, getMessageById, addMessage }
