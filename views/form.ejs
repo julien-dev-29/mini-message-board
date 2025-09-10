@@ -1,13 +1,20 @@
 <%- include('../partials/head') %>
 
-<body>
-    <h2>Nouveau Message: </h2>
-    <form action="/new" method="post">
-        <input type="text" name="messageText">
-        <input type="text">
-        <button type="submit">Ajouter</button>
-    </form>
-    <a href="/">Back</a>
-</body>
+    <body class="body-form">
+        <div class="form-container">
+            <h2>Nouveau Message</h2>
+            <form class="form" action="/new" method="post">
+                <div>
+                    <label for="messageText">Message</label>
+                    <input required type="text" id="messageText" name="messageText">
+                </div>
+                <div><label for="messageText">Utilisateur</label>
+                    <input required type="text" id="user" name="user">
+                </div>
+                <button type="submit">Ajouter</button>
+            </form>
+            <a href="/">Back</a>
+        </div>
+    </body>
 
-</html>
+    </html>

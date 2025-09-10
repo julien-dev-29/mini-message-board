@@ -1,16 +1,27 @@
 <%- include('../partials/head') %>
 
-    <body>
-        <h1>
-            <%= message.text %>
-        </h1>
-        <p>
-            <%= message.added %>
-        </p>
-        <p>
-            <%= message.user %>
-        </p>
-        <a href="/">Back</a>
+    <body class="body-form">
+        <div class="board">
+            <div class="form-container">
+                <h1>
+                    <%= message.text %>
+                </h1>
+                <div class="user">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#29A383" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-user-icon lucide-user">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    <%= message.user %>
+                </div>
+                <p>
+                    <%= message.added %>
+                </p>
+
+                <a href="/">Back</a>
+            </div>
+        </div>
     </body>
 
     </html>
