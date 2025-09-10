@@ -6,7 +6,7 @@
 
 body {
     font-family: sans-serif;
-    background-color: #FCFCFC;
+    background: linear-gradient(115deg, #F9F9F9 50%, #ACDEC8 50%);
     color: #202020;
 }
 
@@ -27,7 +27,7 @@ body {
     width: 400px;
     margin: 24px;
     border-radius: 5px;
-    background-color: #F9F9F9;
+    background-color: #FCFCFC;
     padding: 24px;
     border: 1px solid #D9D9D9;
     box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.1);
@@ -85,6 +85,17 @@ a {
 /** Message Board */
 .body-board p {
     color: #646464;
+}
+
+.board {
+    padding: 24px;
+    background-color: #FCFCFC;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+}
+
+.board .card {
+    padding: 0 24px;
 }
 
 .board .user,
