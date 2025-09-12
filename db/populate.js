@@ -1,6 +1,15 @@
 import { Client } from "pg";
 import 'dotenv/config'
-const SQL = `INSERT INTO messages (message, username, added) 
+import { ssl } from "pg/lib/defaults";
+const SQL = `
+CREATE TABLE IF NOT EXISTS messages (
+    id SERIAL PRIMARY KEY,
+    message TEXT NOT NULL,
+    username VARCHAR(50) NOT NULL,
+    added TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+INSERT INTO messages (message, username, added) 
 VALUES 
 ('Hello, world!', 'user1', NOW()),
 ('This is a test message.', 'user2', NOW()),
@@ -16,7 +25,8 @@ async function main() {
         password: process.env.PG_PASSWORD,
         host: process.env.PG_HOST,
         port: process.env.PG_PORT,
-        database: process.env.PG_DATABASE
+        database: process.env.PG_DATABASE,
+        ssl: true
     })
     await client.connect()
     await client.query(SQL)
