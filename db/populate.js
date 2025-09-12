@@ -1,6 +1,5 @@
 import { Client } from "pg";
 import 'dotenv/config'
-import { ssl } from "pg/lib/defaults";
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
     id SERIAL PRIMARY KEY,
