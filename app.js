@@ -41,8 +41,9 @@ const messageValidation = [
         .isLength({ max: 50 })
         .withMessage('Username cannot exceed 50 characters')
 ];
-app.use(router)
+app.use(router, messageValidation);
 
+// Server
 app.listen(PORT, (error) => {
     if (error) throw error
     console.log(`Mini Message Board App runs on port: ${PORT}`);
