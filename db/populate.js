@@ -26,7 +26,9 @@ async function main() {
         host: process.env.PG_HOST,
         port: process.env.PG_PORT,
         database: process.env.PG_DATABASE,
-        ssl: true
+        ssl: {
+            rejectUnauthorized: false
+        }
     })
     await client.connect()
     await client.query(SQL)
