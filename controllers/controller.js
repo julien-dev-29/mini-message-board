@@ -1,19 +1,18 @@
-import { addMessage, getAllMessages, getMessageById } from "../repositories/messages.js"
-
+import db from '../db/queries.js'
 
 export default {
-    getMessages: (req, res) => {
-        res.render('index', { messages: getAllMessages() })
+    getMessages: async (req, res) => {
+        res.render('index', { messages: await db.getAllMessages() })
     },
-    getDetails: (req, res) => {
-        const message = getMessageById(req.params.id);
-        if (!message) {
-            return res.status(404).send('Message not found');
-        }
-        res.render('details', { message });
+    getDetails: async (req, res) => {
+        const id = (req.params.id);
+        res.render('details', { message: await db.getMessageById(id) });
     },
-    addMessage: (req, res) => {
-        addMessage(req)
+    newPost: async (req, res) => {
+        await db.insertMessage(req.body.messageText, req.body.username)
         res.redirect('/')
+    },
+    newGet: (req, res) => {
+        res.render('form')
     }
 }

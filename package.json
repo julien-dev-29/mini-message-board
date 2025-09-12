@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/julien-dev-29/mini-message-board#readme",
   "dependencies": {
+    "dotenv": "^17.2.2",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "express-validator": "^7.2.1",
+    "nodemon": "^3.1.10",
+    "pg": "^8.16.3"
   }
 }
