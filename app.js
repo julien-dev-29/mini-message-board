@@ -18,6 +18,7 @@ const PORT = process.env.PORT || 3000
 
 // Middlewares
 app.use(express.static(assetsPath));
+app.use(express.static(path.join(__dirname, )))
 app.use(express.urlencoded({ extended: true }));// app.js
 
 // Views
